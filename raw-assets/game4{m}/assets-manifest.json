@@ -1,0 +1,304 @@
+{
+  "bundles": [
+    {
+      "name": "default",
+      "assets": []
+    },
+    {
+      "name": "audio",
+      "assets": [
+        {
+          "name": "audio/example.mp3",
+          "srcs": [
+            "audio/example.mp3",
+            "audio/example.ogg"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "png",
+      "assets": [
+        {
+          "name": "png/bg.png",
+          "srcs": [
+            "png/bg.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/cat.png",
+          "srcs": [
+            "png/cat.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/cat_place.png",
+          "srcs": [
+            "png/cat_place.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/chicken.png",
+          "srcs": [
+            "png/chicken.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/chicken_place.png",
+          "srcs": [
+            "png/chicken_place.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/crayon.png",
+          "srcs": [
+            "png/crayon.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/desk.png",
+          "srcs": [
+            "png/desk.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/desk_item.png",
+          "srcs": [
+            "png/desk_item.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/dog.png",
+          "srcs": [
+            "png/dog.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/dog_place.png",
+          "srcs": [
+            "png/dog_place.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/false.png",
+          "srcs": [
+            "png/false.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/fish.png",
+          "srcs": [
+            "png/fish.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/fish_place.png",
+          "srcs": [
+            "png/fish_place.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/logo-pixi.png",
+          "srcs": [
+            "png/logo-pixi.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/pick.png",
+          "srcs": [
+            "png/pick.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/pig.png",
+          "srcs": [
+            "png/pig.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/pig_place.png",
+          "srcs": [
+            "png/pig_place.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/true.png",
+          "srcs": [
+            "png/true.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "spine_celebra",
+      "assets": [
+        {
+          "name": "spine_celebra/effect_balloon.atlas",
+          "srcs": [
+            "spine_celebra/effect_balloon.atlas"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "spine_celebra/effect_balloon.json",
+          "srcs": [
+            "spine_celebra/effect_balloon.json"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "spine_celebra/effect_balloon.png",
+          "srcs": [
+            "spine_celebra/effect_balloon.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "spine_monkey",
+      "assets": [
+        {
+          "name": "spine_monkey/game_1_animation.atlas",
+          "srcs": [
+            "spine_monkey/game_1_animation.atlas"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "spine_monkey/game_1_animation.json",
+          "srcs": [
+            "spine_monkey/game_1_animation.json"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "spine_monkey/game_1_animation.png",
+          "srcs": [
+            "spine_monkey/game_1_animation.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

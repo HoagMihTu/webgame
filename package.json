@@ -1,0 +1,42 @@
+{
+  "name": "gameweb",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run assets && vite --open",
+    "build": "npm run assets && vite build",
+    "preview": "npm run build && vite preview --open",
+    "clean": "node cmds.js clean",
+    "assets": "assetpack"
+  },
+  "dependencies": {
+    "@pixi/sound": "^5.0.0",
+    "@pixi/ui": "^0.5.0",
+    "gsap": "^3.11.4",
+    "nanoid": "^4.0.2",
+    "pixi-spine": "^4.0.3",
+    "pixi.js": "^7.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "devDependencies": {
+    "@assetpack/cli": "~0.3.4",
+    "@assetpack/core": "~0.3.4",
+    "@assetpack/plugin-compress": "~0.3.4",
+    "@assetpack/plugin-ffmpeg": "~0.3.4",
+    "@assetpack/plugin-json": "~0.3.4",
+    "@assetpack/plugin-manifest": "~0.3.4",
+    "@assetpack/plugin-mipmap": "~0.3.4",
+    "@assetpack/plugin-texture-packer": "~0.3.4",
+    "@assetpack/plugin-webfont": "~0.3.4",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.0"
+  }
+}

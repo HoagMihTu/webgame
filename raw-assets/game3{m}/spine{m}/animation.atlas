@@ -1,0 +1,125 @@
+
+animation.png
+size: 940,940
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1 copy 3
+  rotate: true
+  xy: 513, 481
+  size: 457, 286
+  orig: 459, 288
+  offset: 1, 1
+  index: -1
+1 copy 5
+  rotate: true
+  xy: 636, 38
+  size: 441, 95
+  orig: 441, 95
+  offset: 0, 0
+  index: -1
+21361113 copy
+  rotate: false
+  xy: 2, 383
+  size: 506, 158
+  orig: 508, 160
+  offset: 1, 1
+  index: -1
+21361113 copy 2
+  rotate: false
+  xy: 2, 383
+  size: 506, 158
+  orig: 508, 160
+  offset: 1, 1
+  index: -1
+21361113 copy 3
+  rotate: false
+  xy: 2, 383
+  size: 506, 158
+  orig: 508, 160
+  offset: 1, 1
+  index: -1
+5
+  rotate: false
+  xy: 2, 702
+  size: 509, 236
+  orig: 511, 238
+  offset: 1, 1
+  index: -1
+Layer 812
+  rotate: false
+  xy: 2, 203
+  size: 501, 178
+  orig: 503, 180
+  offset: 1, 1
+  index: -1
+Layer 812 copy
+  rotate: true
+  xy: 510, 18
+  size: 461, 45
+  orig: 461, 45
+  offset: 0, 0
+  index: -1
+Layer 812 copy 2
+  rotate: true
+  xy: 801, 437
+  size: 501, 137
+  orig: 503, 139
+  offset: 1, 1
+  index: -1
+Layer 812 copy 3
+  rotate: false
+  xy: 2, 83
+  size: 501, 118
+  orig: 503, 120
+  offset: 1, 1
+  index: -1
+Layer 812 copy 4
+  rotate: false
+  xy: 2, 2
+  size: 492, 79
+  orig: 494, 81
+  offset: 1, 1
+  index: -1
+Layer 814
+  rotate: false
+  xy: 2, 543
+  size: 508, 157
+  orig: 510, 159
+  offset: 1, 1
+  index: -1
+Layer 814 copy
+  rotate: false
+  xy: 2, 543
+  size: 508, 157
+  orig: 510, 159
+  offset: 0, 2
+  index: -1
+Layer 814 copy 2
+  rotate: false
+  xy: 2, 543
+  size: 508, 157
+  orig: 510, 159
+  offset: 0, 2
+  index: -1
+Layer 815
+  rotate: true
+  xy: 557, 33
+  size: 446, 77
+  orig: 448, 79
+  offset: 1, 1
+  index: -1
+Layer 815 copy
+  rotate: true
+  xy: 557, 33
+  size: 446, 77
+  orig: 448, 79
+  offset: 1, 1
+  index: -1
+Layer 815 copy 2
+  rotate: true
+  xy: 557, 33
+  size: 446, 77
+  orig: 448, 79
+  offset: 1, 1
+  index: -1

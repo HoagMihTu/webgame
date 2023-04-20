@@ -1,0 +1,139 @@
+{
+  "bundles": [
+    {
+      "name": "default",
+      "assets": []
+    },
+    {
+      "name": "png",
+      "assets": [
+        {
+          "name": "png/apple.png",
+          "srcs": [
+            "png/apple.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/bg.png",
+          "srcs": [
+            "png/bg.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/container.png",
+          "srcs": [
+            "png/container.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/dirt.png",
+          "srcs": [
+            "png/dirt.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/end_snail.png",
+          "srcs": [
+            "png/end_snail.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/leaf.png",
+          "srcs": [
+            "png/leaf.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/snail.png",
+          "srcs": [
+            "png/snail.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/strawberry.png",
+          "srcs": [
+            "png/strawberry.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/sweet_potato.png",
+          "srcs": [
+            "png/sweet_potato.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "spine_snail",
+      "assets": [
+        {
+          "name": "spine_snail/snail.json",
+          "srcs": [
+            "spine_snail/snail.json"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "spine_snail/snail.png",
+          "srcs": [
+            "spine_snail/snail.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

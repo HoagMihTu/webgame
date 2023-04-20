@@ -1,0 +1,118 @@
+
+effect_balloon.png
+size: 2512,2512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 747
+  size: 1691, 883
+  orig: 1693, 885
+  offset: 1, 1
+  index: -1
+2
+  rotate: false
+  xy: 2, 1632
+  size: 1728, 878
+  orig: 1730, 880
+  offset: 1, 1
+  index: -1
+3
+  rotate: true
+  xy: 1695, 13
+  size: 1617, 815
+  orig: 1730, 880
+  offset: 69, 63
+  index: -1
+4
+  rotate: false
+  xy: 2, 99
+  size: 1116, 646
+  orig: 1693, 885
+  offset: 256, 56
+  index: -1
+Vector Smart Object copy
+  rotate: false
+  xy: 2282, 2016
+  size: 177, 494
+  orig: 177, 494
+  offset: 0, 0
+  index: -1
+Vector Smart Object copy 2
+  rotate: false
+  xy: 1306, 167
+  size: 176, 578
+  orig: 176, 578
+  offset: 0, 0
+  index: -1
+Vector Smart Object copy 6
+  rotate: false
+  xy: 1306, 167
+  size: 176, 578
+  orig: 176, 578
+  offset: 0, 0
+  index: -1
+Vector Smart Object copy 3
+  rotate: true
+  xy: 1732, 1747
+  size: 177, 494
+  orig: 179, 496
+  offset: 1, 1
+  index: -1
+Vector Smart Object copy 7
+  rotate: true
+  xy: 1732, 1747
+  size: 177, 494
+  orig: 177, 494
+  offset: 0, 0
+  index: -1
+Vector Smart Object copy 4
+  rotate: false
+  xy: 1732, 1926
+  size: 184, 584
+  orig: 184, 584
+  offset: 0, 0
+  index: -1
+Vector Smart Object copy 5
+  rotate: false
+  xy: 1120, 161
+  size: 184, 584
+  orig: 184, 584
+  offset: 0, 0
+  index: -1
+kk
+  rotate: false
+  xy: 2104, 1932
+  size: 176, 578
+  orig: 178, 580
+  offset: 1, 1
+  index: -1
+lll
+  rotate: false
+  xy: 1918, 1926
+  size: 184, 584
+  orig: 186, 586
+  offset: 1, 1
+  index: -1
+no_0
+  rotate: false
+  xy: 1120, 24
+  size: 139, 135
+  orig: 139, 135
+  offset: 0, 0
+  index: -1
+no_1
+  rotate: true
+  xy: 2282, 1767
+  size: 247, 208
+  orig: 247, 208
+  offset: 0, 0
+  index: -1
+uu
+  rotate: false
+  xy: 1484, 186
+  size: 176, 559
+  orig: 178, 561
+  offset: 1, 1
+  index: -1
