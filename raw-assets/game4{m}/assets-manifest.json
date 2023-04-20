@@ -5,23 +5,6 @@
       "assets": []
     },
     {
-      "name": "audio",
-      "assets": [
-        {
-          "name": "audio/example.mp3",
-          "srcs": [
-            "audio/example.mp3",
-            "audio/example.ogg"
-          ],
-          "data": {
-            "tags": {
-              "m": true
-            }
-          }
-        }
-      ]
-    },
-    {
       "name": "png",
       "assets": [
         {
