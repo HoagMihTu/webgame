@@ -8,12 +8,12 @@ function LandingPage() {
         <h1>Demo game</h1>
         <div className="list-row">
           <Link to="/game1" className='text'>
-            Game 1: Đếm đến 5
+            Game 1: chịu
           </Link>
         </div>
         <div className='list-row'>
           <Link to="/game2" className='text'>
-            Game 2: Đếm đến 5 trong khung
+            Game 2: chịu
           </Link>
         </div>
         <div className='list-row'>
