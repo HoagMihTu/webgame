@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Game1.css'
-import Scoreboard from '../../utils/scoreboard'
+import Scoreboard from '../../utils/Scoreboard'
 import {data, bg_game1, tutorial1} from './img/img'
 import {trueimgAll, wrongimgAll} from '../../utils/img'
 import lightbulb from '../../../assets/light-bulb.png'
