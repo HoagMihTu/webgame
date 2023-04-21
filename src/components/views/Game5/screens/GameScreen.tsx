@@ -222,16 +222,15 @@ export class GameScreen extends Container {
 
         level = 4
         this.removeChild(this.question)
+        this.snail.removeContent(this.back_number)
         this.shuffle_type()
         this.question = new Label('Bé hãy chỉ đường cho chú ốc sên ăn '+ level.toString() + ' ' + type_question[0] + ' nhé', { fill: 0x000000, fontSize: 20, fontFamily: 'Clear Sans'})
         this.question.x = width * 0.5;
         this.question.y = height * 0.05;
         this.addChild(this.question)
-        this.snail.removeContent(this.back_number)
         this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
         this.snail.addContent(this.back_number)
         this.back_number.position.set(675,-520)
-        if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1}
 
         for (let k = 0; k < 5; k++) {
             this.leaf[k].hide(true);
@@ -254,6 +253,8 @@ export class GameScreen extends Container {
         await waitFor(0.5)
         this.shuffle_place();
         this.resize(width,height)
+
+        if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1} else {this.back_number.scale.x= 1}
 
         for (let k = 0; k < 5; k++) {
             this.leaf[k].show(true);
