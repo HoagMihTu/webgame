@@ -18,7 +18,7 @@ function LandingPage() {
         </div>
         <div className='list-row'>
           <Link to="/game3" className='text'>
-            Game 3: Test
+            Game 3: Alo
           </Link>
         </div>
         <div className='list-row'>
