@@ -1,7 +1,8 @@
 import { BlurFilter, Container, Sprite, Texture } from 'pixi.js';
 import { Label } from '../ui/Label';
-import { RoundedBox } from '../ui/RoundedBox';
-import { Btn_resume } from '../ui/Btn_resume';
+import { Tutorial_Box } from '../ui/Tutorial_Box';
+import { Tutorial_Resume_Btn } from '../ui/Tutorial_Resume_Btn';
+import { Tutorial_bg } from '../ui/Tutorial_bg';
 import gsap from 'gsap';
 import { navigation } from '../utils/navigation';
 
@@ -9,8 +10,9 @@ export class PausePopup extends Container {
     private bg: Sprite;
     private panel: Container;
     private title: Label;
-    private btn_resume: Btn_resume;
-    private panelBase: RoundedBox;
+    private btn_resume: Tutorial_Resume_Btn;
+    private panelBase: Tutorial_Box;
+    private background: Tutorial_bg;
 
     constructor() {
         super();
@@ -23,14 +25,17 @@ export class PausePopup extends Container {
         this.panel = new Container();
         this.addChild(this.panel);
 
-        this.panelBase = new RoundedBox({ height: 300 });
+        this.background = new Tutorial_bg();
+        this.panel.addChild(this.background);
+
+        this.panelBase = new Tutorial_Box({ height: 300 });
         this.panel.addChild(this.panelBase);
 
-        this.title = new Label('Tutorial', { fill: 0xffd579, fontSize: 50 });
+        this.title = new Label('Hướng dẫn', { fill: 0x070707, fontSize: 50, fontWeight: 'bold' });
         this.title.y = -80;
         this.panel.addChild(this.title);
 
-        this.btn_resume = new Btn_resume({ text: 'Resume' });
+        this.btn_resume = new Tutorial_Resume_Btn({ text: 'Resume' });
         this.btn_resume.y = 70;
         this.btn_resume.interactive = true
         this.btn_resume.on('pointerup',() => {this.btn_resume.scale.set(1);navigation.dismissPopup()})

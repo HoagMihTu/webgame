@@ -100,7 +100,7 @@ export class GameScreen extends Container {
         this.snail = new Snail();
         this.addChild(this.snail);
 
-        this.back_number = new Label(level.toString(), { fill: 0xffd579, fontSize: 270 }, 200)
+        this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
         this.back_number.position.set(675,-520)
 
         this.question = new Label('Bé hãy chỉ đường cho chú ốc sên ăn '+ level.toString() + ' ' + type_question[0] + ' nhé', { fill: 0x000000, fontSize: 20, fontFamily: 'Clear Sans'})
@@ -228,7 +228,7 @@ export class GameScreen extends Container {
         this.addChild(this.question)
         level = 4
         this.snail.removeContent(this.back_number)
-        this.back_number = new Label(level.toString(), { fill: 0xffd579, fontSize: 270 }, 200)
+        this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
         this.snail.addContent(this.back_number)
         this.back_number.position.set(675,-520)
         if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1}
@@ -298,7 +298,7 @@ export class GameScreen extends Container {
             this.snail.removeContent(this.back_number)
             level--;
             if(level == 0){navigation.presentPopup(ResultPopup);prevPopup = 'finish'}
-            this.back_number = new Label(level.toString(), { fill: 0xffd579, fontSize: 270 }, 200)
+            this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
             this.snail.addContent(this.back_number)
             this.back_number.position.set(675,-520)
             if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1}
