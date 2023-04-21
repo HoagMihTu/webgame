@@ -50,6 +50,7 @@ let randomAnswer:any = []
 let false_diagram:any = []
 let true_diagram:any
 let answer:any = []
+let answer_holder:any = []
 
 let pickedColor: any = '0xffffff';
 
@@ -73,7 +74,7 @@ export class GameScreen extends Container {
 
         this.btn_back = new Btn_back();
         this.btn_back.interactive = true
-        this.btn_back.on('click', ()=> this.reset())
+        this.btn_back.on('pointerup', ()=> this.reset())
         this.addChild(this.btn_back);
 
         this.bg_item1 = new Bg_item1();
@@ -176,6 +177,7 @@ export class GameScreen extends Container {
         randomAnswer = []
         false_diagram = []
         answer = []
+        answer_holder = []
         true_diagram = null
 
         this.setup()
@@ -212,28 +214,41 @@ export class GameScreen extends Container {
             if(randomAnswer.includes(i)){
                 this.game_piece[i] = new Game_piece({sprite: true_diagram});
                 this.game_piece[i].interactive = true;
-                this.game_piece[i].on('click', ()=> {this.game_piece[i].setColor(pickedColor); this.check_victory(i,pickedColor)})
+                this.game_piece[i].on('pointerup', ()=> {this.game_piece[i].setColor(pickedColor); this.check_victory(i,pickedColor)})
                 this.addChild(this.game_piece[i])
             } else {
                 this.game_piece[i] = new Game_piece({sprite: false_diagram[random_false_diagram]});
                 this.game_piece[i].interactive = true;
-                this.game_piece[i].on('pointerup', ()=> {this.game_piece[i].setColor(pickedColor)})
+                this.game_piece[i].on('pointerup', ()=> {this.game_piece[i].setColor(pickedColor); this.check_victory(i,pickedColor)})
                 this.addChild(this.game_piece[i])
             }
         }
     }
 
     public check_victory(index: number, color: any){
-        let check_answer = answer.map((x: any)=> {return x.id;}).indexOf(index);
-        if(check_answer == -1){
-            answer.push({id: index, color: color})
+        let check_color = answer_holder.map((x: any)=> {return x.id;}).indexOf(index);
+        if(check_color > -1 && answer_holder[check_color].color == color){
+            color = '0xffffff'
+            answer_holder.splice(check_color,1)
+            answer_holder.push({id: index, color: color})
+            this.game_piece[index].setColor(color)
+        } else if (check_color > -1){
+            answer_holder.splice(check_color,1)
+            answer_holder.push({id: index, color: color})
         } else {
-            answer.splice(check_answer,1)
-            answer.push({id: index, color: color})
+            answer_holder.push({id: index, color: color})
+        }
+        if (randomAnswer.includes(index)){
+            let check_answer = answer.map((x: any)=> {return x.id;}).indexOf(index);
+            if(check_answer == -1){
+                answer.push({id: index, color: color})
+            } else {
+                answer.splice(check_answer,1)
+                answer.push({id: index, color: color})
+            }
         }
 
         let check_answer_quantity = answer.every((x: any) => {if (x.color === answer[0].color) {return true;}})
-        console.log(check_answer_quantity)
         if(check_answer_quantity && answer.length == randomAnswer.length){
             navigation.presentPopup(ResultPopup);prevPopup = 'finish'
         }

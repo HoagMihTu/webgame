@@ -220,13 +220,13 @@ export class GameScreen extends Container {
         const height = windowHeight * scale;
 
 
+        level = 4
         this.removeChild(this.question)
         this.shuffle_type()
         this.question = new Label('Bé hãy chỉ đường cho chú ốc sên ăn '+ level.toString() + ' ' + type_question[0] + ' nhé', { fill: 0x000000, fontSize: 20, fontFamily: 'Clear Sans'})
         this.question.x = width * 0.5;
         this.question.y = height * 0.05;
         this.addChild(this.question)
-        level = 4
         this.snail.removeContent(this.back_number)
         this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
         this.snail.addContent(this.back_number)
