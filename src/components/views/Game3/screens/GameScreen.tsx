@@ -210,6 +210,7 @@ export class GameScreen extends Container {
                 await this.fish[i].show(true)
             }
         } else {
+            timer = 0
             timer_update = 0
             localStorage.setItem("point", `${point}`);
             navigation.presentPopup(ResultPopup);prevPopup = 'finish'
