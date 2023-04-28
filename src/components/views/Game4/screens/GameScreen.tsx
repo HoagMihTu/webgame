@@ -13,6 +13,18 @@ import { Game_piece } from '../ui/Game_piece';
 // import { sound } from '@pixi/sound';
 import { waitFor } from '../utils/asyncUtils';
 
+
+const windowWidth = window.innerWidth * 0.85;
+const windowHeight = window.innerHeight * 0.85;
+const minWidth = 600;
+const minHeight = 325;
+
+const scaleX = windowWidth < minWidth ? minWidth / windowWidth : 1;
+const scaleY = windowHeight < minHeight ? minHeight / windowHeight : 1;
+const scale = scaleX > scaleY ? scaleX : scaleY;
+const canvasWidth = windowWidth * scale;
+const canvasHeight = windowHeight * scale;
+
 const data = [
     {sprite: '/game4/png/dog.png', type: 1},{sprite: '/game4/png/dog_place.png', type: 1},
     {sprite: '/game4/png/cat.png', type: 2},{sprite: '/game4/png/cat_place.png', type: 2},
@@ -73,22 +85,7 @@ export class GameScreen extends Container {
         this.addChild(this.btn_back);
 
         this.shuffle()
-
-        for (let i = 0; i<10;i++){
-            this.line[i] = new Graphics();
-            this.addChild(this.line[i]);
-        }
-
-        for (let i = 0; i<10;i++){
-            this.game_piece[i] = new Game_piece({sprite: data[i].sprite,type: data[i].type});
-            this.game_piece[i].interactive = true;
-            this.game_piece[i].on('pointerover', () => this.game_piece[i].scale.set(1.2))
-                    .on('pointerout', ()=> this.game_piece[i].scale.set(1))
-                    .on('pointerup', ()=> {this.check_value(i)})
-                    .on('pointerdown',()=> this.game_piece[i].scale.set(1))
-                    .on('pointerup',()=> this.game_piece[i].scale.set(1.2));
-            this.addChild(this.game_piece[i])
-        }
+        this.setup()
 
         this.celebation = new Celebration();
         this.addChild(this.celebation);
@@ -143,6 +140,25 @@ export class GameScreen extends Container {
 
         for (let k = 0; k < 10; k++) {
             this.line[k].position.set(this.game_piece[k].x, this.game_piece[k].y);
+        }
+
+    }
+
+    public setup(){
+        for (let i = 0; i<10;i++){
+            this.line[i] = new Graphics();
+            this.addChild(this.line[i]);
+        }
+
+        for (let i = 0; i<10;i++){
+            this.game_piece[i] = new Game_piece({sprite: data[i].sprite,type: data[i].type});
+            this.game_piece[i].interactive = true;
+            this.game_piece[i].on('pointerover', () => this.game_piece[i].scale.set(1.2))
+                    .on('pointerout', ()=> this.game_piece[i].scale.set(1))
+                    .on('pointerup', ()=> {this.check_value(i)})
+                    .on('pointerdown',()=> this.game_piece[i].scale.set(1))
+                    .on('pointerup',()=> this.game_piece[i].scale.set(1.2));
+            this.addChild(this.game_piece[i])
         }
     }
 
@@ -215,15 +231,24 @@ export class GameScreen extends Container {
             this.line[k].clear()
         }
 
+        for (let k = 0; k < 10; k++) {
+            this.removeChild(this.game_piece[k]);
+        }
+
         this.shuffle_place();
 
+        this.celebation.hide(false);
+
+        this.setup()
+
+        for (let k = 0; k < 10; k++) {
+            this.game_piece[k].hide(false);
+        }
 
         for (let k = 0; k < 10; k++) {
             this.game_piece[k].show(true);
             this.game_piece[k].interactive= true;
         }
-
-        this.celebation.hide(false);
 
         this.resize(width, height)
         
@@ -232,6 +257,7 @@ export class GameScreen extends Container {
     }
 
     public async check_value(current_index: number) {
+        console.log(this.game_piece[current_index].type)
         if (check === -1){
             check = current_index;
             this.game_piece[current_index].onPick();

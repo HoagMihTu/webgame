@@ -18,7 +18,7 @@ function LandingPage() {
         </div>
         <div className='list-row'>
           <Link to="/game3" className='text'>
-            Game 3: Test
+            Game 3: Đếm cá
           </Link>
         </div>
         <div className='list-row'>
@@ -39,6 +39,11 @@ function LandingPage() {
         <div className='list-row'>
           <Link to="/game7" className='text'>
             Game 7: Tìm đường
+          </Link>
+        </div>
+        <div className='list-row'>
+          <Link to="/game8" className='text'>
+            Game 8: Hình vuông trốn ở đâu
           </Link>
         </div>
       </main>

@@ -279,6 +279,7 @@ export class GameScreen extends Container {
     }
 
     public async snailAction(food: any){
+        let speed = (this.Pitago((this.snail.position.x - food.position.x),(this.snail.position.y - food.position.y)) / 200) + 0.5
         if(food.position.x > this.snail.position.x){
             this.snail.scale.x= -0.5
             this.back_number.scale.x= -1
@@ -290,7 +291,7 @@ export class GameScreen extends Container {
         }
         this.snail.play2();
         gsap.killTweensOf(this.snail.position);
-        await gsap.to(this.snail.position, { x: food.position.x , y: food.position.y, duration: 1 });  
+        await gsap.to(this.snail.position, { x: food.position.x , y: food.position.y, duration: speed});  
         this.snail.play3();
         await waitFor(1)
         food.hide(true)
@@ -298,15 +299,23 @@ export class GameScreen extends Container {
         if(food.type == type_question[0]){
             this.snail.removeContent(this.back_number)
             level--;
-            if(level == 0){navigation.presentPopup(ResultPopup);prevPopup = 'finish'}
             this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
             this.snail.addContent(this.back_number)
             this.back_number.position.set(675,-520)
             if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1}
+            if(level == 0){
+                await waitFor(1)
+                navigation.presentPopup(ResultPopup);prevPopup = 'finish'}
         } else {
             navigation.presentPopup(FalsePopup);prevPopup = 'pause'
         }
     }
+
+    public Pitago(a: any, b: any) {
+        if (a<0) {a = a * -1}
+        if (b<0) {b = b * -1}
+        return (Math.sqrt((a * a) + (b * b)));
+      }
 
     public shuffle_place() {
         let currentIndex = place_data.length,  randomIndex;

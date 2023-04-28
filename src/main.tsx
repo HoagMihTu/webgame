@@ -10,6 +10,7 @@ import Game4 from './components/views/Game4/Game4';
 import Game5 from './components/views/Game5/Game5';
 import Game6 from './components/views/Game6/Game6';
 import Game7 from './components/views/Game7/Game7';
+import Game8 from './components/views/Game8/Game8'
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
@@ -23,5 +24,6 @@ root.render(
                 <Route path="game5" element={<Game5 />} />
                 <Route path="game6" element={<Game6 />} />
                 <Route path="game7" element={<Game7 />} />
+                <Route path="game8" element={<Game8 />} />
             </Routes>
         </BrowserRouter>);

@@ -5,23 +5,6 @@
       "assets": []
     },
     {
-      "name": "audio",
-      "assets": [
-        {
-          "name": "audio/example.mp3",
-          "srcs": [
-            "audio/example.mp3",
-            "audio/example.ogg"
-          ],
-          "data": {
-            "tags": {
-              "m": true
-            }
-          }
-        }
-      ]
-    },
-    {
       "name": "png",
       "assets": [
         {
@@ -36,9 +19,9 @@
           }
         },
         {
-          "name": "png/cat.png",
+          "name": "png/btn_level.png",
           "srcs": [
-            "png/cat.png"
+            "png/btn_level.png"
           ],
           "data": {
             "tags": {
@@ -47,9 +30,9 @@
           }
         },
         {
-          "name": "png/cat_place.png",
+          "name": "png/btn_normal.png",
           "srcs": [
-            "png/cat_place.png"
+            "png/btn_normal.png"
           ],
           "data": {
             "tags": {
@@ -58,9 +41,9 @@
           }
         },
         {
-          "name": "png/chicken.png",
+          "name": "png/fish_1.png",
           "srcs": [
-            "png/chicken.png"
+            "png/fish_1.png"
           ],
           "data": {
             "tags": {
@@ -69,9 +52,9 @@
           }
         },
         {
-          "name": "png/chicken_place.png",
+          "name": "png/fish_2.png",
           "srcs": [
-            "png/chicken_place.png"
+            "png/fish_2.png"
           ],
           "data": {
             "tags": {
@@ -80,9 +63,9 @@
           }
         },
         {
-          "name": "png/crayon.png",
+          "name": "png/fish_3.png",
           "srcs": [
-            "png/crayon.png"
+            "png/fish_3.png"
           ],
           "data": {
             "tags": {
@@ -91,9 +74,9 @@
           }
         },
         {
-          "name": "png/desk.png",
+          "name": "png/fish_4.png",
           "srcs": [
-            "png/desk.png"
+            "png/fish_4.png"
           ],
           "data": {
             "tags": {
@@ -102,9 +85,9 @@
           }
         },
         {
-          "name": "png/desk_item.png",
+          "name": "png/level_1.png",
           "srcs": [
-            "png/desk_item.png"
+            "png/level_1.png"
           ],
           "data": {
             "tags": {
@@ -113,9 +96,9 @@
           }
         },
         {
-          "name": "png/dog.png",
+          "name": "png/level_2.png",
           "srcs": [
-            "png/dog.png"
+            "png/level_2.png"
           ],
           "data": {
             "tags": {
@@ -124,9 +107,9 @@
           }
         },
         {
-          "name": "png/dog_place.png",
+          "name": "png/level_3.png",
           "srcs": [
-            "png/dog_place.png"
+            "png/level_3.png"
           ],
           "data": {
             "tags": {
@@ -135,9 +118,9 @@
           }
         },
         {
-          "name": "png/false.png",
+          "name": "png/level_4.png",
           "srcs": [
-            "png/false.png"
+            "png/level_4.png"
           ],
           "data": {
             "tags": {
@@ -146,9 +129,9 @@
           }
         },
         {
-          "name": "png/fish.png",
+          "name": "png/level_5.png",
           "srcs": [
-            "png/fish.png"
+            "png/level_5.png"
           ],
           "data": {
             "tags": {
@@ -157,9 +140,9 @@
           }
         },
         {
-          "name": "png/fish_place.png",
+          "name": "png/load_bg.png",
           "srcs": [
-            "png/fish_place.png"
+            "png/load_bg.png"
           ],
           "data": {
             "tags": {
@@ -168,9 +151,9 @@
           }
         },
         {
-          "name": "png/logo-pixi.png",
+          "name": "png/number_0.png",
           "srcs": [
-            "png/logo-pixi.png"
+            "png/number_0.png"
           ],
           "data": {
             "tags": {
@@ -179,9 +162,9 @@
           }
         },
         {
-          "name": "png/pick.png",
+          "name": "png/number_1.png",
           "srcs": [
-            "png/pick.png"
+            "png/number_1.png"
           ],
           "data": {
             "tags": {
@@ -190,9 +173,9 @@
           }
         },
         {
-          "name": "png/pig.png",
+          "name": "png/number_10.png",
           "srcs": [
-            "png/pig.png"
+            "png/number_10.png"
           ],
           "data": {
             "tags": {
@@ -201,9 +184,9 @@
           }
         },
         {
-          "name": "png/pig_place.png",
+          "name": "png/number_11.png",
           "srcs": [
-            "png/pig_place.png"
+            "png/number_11.png"
           ],
           "data": {
             "tags": {
@@ -212,9 +195,141 @@
           }
         },
         {
-          "name": "png/true.png",
+          "name": "png/number_12.png",
           "srcs": [
-            "png/true.png"
+            "png/number_12.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_13.png",
+          "srcs": [
+            "png/number_13.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_14.png",
+          "srcs": [
+            "png/number_14.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_15.png",
+          "srcs": [
+            "png/number_15.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_2.png",
+          "srcs": [
+            "png/number_2.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_3.png",
+          "srcs": [
+            "png/number_3.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_4.png",
+          "srcs": [
+            "png/number_4.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_5.png",
+          "srcs": [
+            "png/number_5.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_6.png",
+          "srcs": [
+            "png/number_6.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_7.png",
+          "srcs": [
+            "png/number_7.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_8.png",
+          "srcs": [
+            "png/number_8.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/number_9.png",
+          "srcs": [
+            "png/number_9.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "name": "png/shark.png",
+          "srcs": [
+            "png/shark.png"
           ],
           "data": {
             "tags": {
@@ -225,12 +340,12 @@
       ]
     },
     {
-      "name": "spine_celebra",
+      "name": "spine_clam",
       "assets": [
         {
-          "name": "spine_celebra/effect_balloon.atlas",
+          "name": "spine_clam/animation.atlas",
           "srcs": [
-            "spine_celebra/effect_balloon.atlas"
+            "spine_clam/animation.atlas"
           ],
           "data": {
             "tags": {
@@ -239,9 +354,9 @@
           }
         },
         {
-          "name": "spine_celebra/effect_balloon.json",
+          "name": "spine_clam/animation.json",
           "srcs": [
-            "spine_celebra/effect_balloon.json"
+            "spine_clam/animation.json"
           ],
           "data": {
             "tags": {
@@ -250,47 +365,9 @@
           }
         },
         {
-          "name": "spine_celebra/effect_balloon.png",
+          "name": "spine_clam/animation.png",
           "srcs": [
-            "spine_celebra/effect_balloon.png"
-          ],
-          "data": {
-            "tags": {
-              "m": true
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "spine_monkey",
-      "assets": [
-        {
-          "name": "spine_monkey/game_1_animation.atlas",
-          "srcs": [
-            "spine_monkey/game_1_animation.atlas"
-          ],
-          "data": {
-            "tags": {
-              "m": true
-            }
-          }
-        },
-        {
-          "name": "spine_monkey/game_1_animation.json",
-          "srcs": [
-            "spine_monkey/game_1_animation.json"
-          ],
-          "data": {
-            "tags": {
-              "m": true
-            }
-          }
-        },
-        {
-          "name": "spine_monkey/game_1_animation.png",
-          "srcs": [
-            "spine_monkey/game_1_animation.png"
+            "spine_clam/animation.png"
           ],
           "data": {
             "tags": {

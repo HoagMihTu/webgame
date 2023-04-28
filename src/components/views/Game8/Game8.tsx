@@ -5,16 +5,13 @@ import { Application } from 'pixi.js';
 import { navigation } from './utils/navigation';
 import { initAssets } from './utils/assets';
 import { GameScreen } from "./screens/GameScreen";
-import { LoadScreen } from "./screens/LoadScreen";
-import { LevelScreen } from "./screens/LevelScreen";
 import { Background } from './ui/Background';
-import { waitFor } from "./utils/asyncUtils";
-import { getUrlParam } from './utils/getUrlParams';
+// import { getUrlParam } from './utils/getUrlParams';
 
 
 
-function Game3() {
-    setTimeout(init, 0);
+function Game8() {
+    setTimeout(init, 100);
     return (
         <main>
           <div id='game-container' >
@@ -23,10 +20,10 @@ function Game3() {
     )
 }
   
-export default Game3
+export default Game8
 
 
-export const app_game3 = new Application<HTMLCanvasElement>({
+export const app_game8 = new Application<HTMLCanvasElement>({
     resolution: Math.max(window.devicePixelRatio, 2),
     backgroundColor: 0xffffff,
 });
@@ -43,11 +40,11 @@ function resize() {
     const width = windowWidth * scale;
     const height = windowHeight * scale;
 
-    app_game3.renderer.view.style.width = `${windowWidth}px`;
-    app_game3.renderer.view.style.height = `${windowHeight}px`;
+    app_game8.renderer.view.style.width = `${windowWidth}px`;
+    app_game8.renderer.view.style.height = `${windowHeight}px`;
     window.scrollTo(0, 0);
 
-    app_game3.renderer.resize(width, height);
+    app_game8.renderer.resize(width, height);
     navigation.resize(width, height);
 }
 
@@ -63,7 +60,7 @@ function visibilityChange() {
 
 async function init() {
     var main = document.getElementById("game-container")!;
-    main.appendChild(app_game3.view);
+    main.appendChild(app_game8.view);
 
     window.addEventListener('resize', resize);
 
@@ -73,18 +70,19 @@ async function init() {
 
     await initAssets();
 
-    await waitFor(0.5);
-
     navigation.setBackground(Background);
 
     await navigation.showScreen(GameScreen);
 
-    if (getUrlParam('game') !== null) {
-        await navigation.showScreen(GameScreen);
-    } else if (getUrlParam('load') !== null) {
-        await navigation.showScreen(LoadScreen);
-    } else if (getUrlParam('level') !== null) {
-        await navigation.showScreen(LevelScreen);
-    }
+    // Go to one of the screens if a shortcut is present in url params, otherwise go to home screen
+    // if (getUrlParam('game') !== null) {
+    //     await navigation.showScreen(GameScreen);
+    // } else if (getUrlParam('load') !== null) {
+    //     await navigation.showScreen(LoadScreen);
+    // } else if (getUrlParam('result') !== null) {
+    //     await navigation.showScreen(ResultScreen);
+    // } else {
+    //     await navigation.showScreen(HomeScreen);
+    // }
 
 }
