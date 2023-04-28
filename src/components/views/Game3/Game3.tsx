@@ -77,7 +77,7 @@ async function init() {
 
     navigation.setBackground(Background);
 
-    await navigation.showScreen(GameScreen);
+    await navigation.showScreen(LoadScreen);
 
     if (getUrlParam('game') !== null) {
         await navigation.showScreen(GameScreen);
