@@ -3,6 +3,7 @@ import { navigation } from '../utils/navigation';
 import { Load_bg } from '../ui/Load_bg';
 import { Load_btn } from '../ui/Load_btn';
 import { LevelScreen } from './LevelScreen';
+import { canvasScale } from '../Game3';
 
 export class LoadScreen extends Container {
     private load_bg: Load_bg
@@ -14,7 +15,7 @@ export class LoadScreen extends Container {
         this.load_bg = new Load_bg()
         this.addChild(this.load_bg)
 
-        this.load_btn = new Load_btn({ text: 'Bé đã hiểu' })
+        this.load_btn = new Load_btn({ text: 'Bé đã hiểu', scale: canvasScale })
         this.load_btn.interactive = true
         this.load_btn.on('pointerup', () => {navigation.showScreen(LevelScreen)})
         this.addChild(this.load_btn);

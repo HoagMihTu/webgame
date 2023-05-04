@@ -15,6 +15,7 @@ import { SweetPotato } from '../ui/SweetPotato';
 import { waitFor } from '../utils/asyncUtils';
 
 import { gsap } from 'gsap';
+import { canvasScale } from '../Game5';
 
 let level = 4
 let prevPopup: string
@@ -47,44 +48,48 @@ export class GameScreen extends Container {
         this.shuffle_type()
         for (let i = 0; i<5;i++){
             this.leaf[i] = new Leaf();
+            this.leaf[i].scale.set(canvasScale)
             this.leaf[i].interactive = true;
-            this.leaf[i].on('pointerover', () => this.leaf[i].scale.set(1.2))
-                    .on('pointerout', ()=> this.leaf[i].scale.set(1))
+            this.leaf[i].on('pointerover', () => this.leaf[i].scale.set(1.2 * canvasScale))
+                    .on('pointerout', ()=> this.leaf[i].scale.set(canvasScale))
                     .on('pointerup', ()=> {this.snailAction(this.leaf[i])})
-                    .on('pointerdown',()=> this.leaf[i].scale.set(1))
-                    .on('pointerup',()=> this.leaf[i].scale.set(1.2));
+                    .on('pointerdown',()=> this.leaf[i].scale.set(canvasScale))
+                    .on('pointerup',()=> this.leaf[i].scale.set(1.2 * canvasScale));
             this.addChild(this.leaf[i])
         }
         for (let i = 0; i<5;i++){
             this.apple[i] = new Apple();
             this.apple[i].interactive = true;
-            this.apple[i].on('pointerover', () => this.apple[i].scale.set(1.2))
-                    .on('pointerout', ()=> this.apple[i].scale.set(1))
+            this.apple[i].scale.set(canvasScale)
+            this.apple[i].on('pointerover', () => this.apple[i].scale.set(1.2 * canvasScale))
+                    .on('pointerout', ()=> this.apple[i].scale.set(canvasScale))
                     .on('pointerup', ()=> {this.snailAction(this.apple[i])})
-                    .on('pointerdown',()=> this.apple[i].scale.set(1))
-                    .on('pointerup',()=> this.apple[i].scale.set(1.2));
+                    .on('pointerdown',()=> this.apple[i].scale.set(canvasScale))
+                    .on('pointerup',()=> this.apple[i].scale.set(1.2 * canvasScale));
             this.addChild(this.apple[i])
         }
 
         for (let i = 0; i<5;i++){
             this.strawberry[i] = new Strawberry();
             this.strawberry[i].interactive = true;
-            this.strawberry[i].on('pointerover', () => this.strawberry[i].scale.set(1.2))
-                    .on('pointerout', ()=> this.strawberry[i].scale.set(1))
+            this.strawberry[i].scale.set(canvasScale)
+            this.strawberry[i].on('pointerover', () => this.strawberry[i].scale.set(1.2 * canvasScale))
+                    .on('pointerout', ()=> this.strawberry[i].scale.set(canvasScale))
                     .on('pointerup', ()=> {this.snailAction(this.strawberry[i])})
-                    .on('pointerdown',()=> this.strawberry[i].scale.set(1))
-                    .on('pointerup',()=> this.strawberry[i].scale.set(1.2));
+                    .on('pointerdown',()=> this.strawberry[i].scale.set(canvasScale))
+                    .on('pointerup',()=> this.strawberry[i].scale.set(1.2 * canvasScale));
             this.addChild(this.strawberry[i])
         }
 
         for (let i = 0; i<5;i++){
             this.sweet_potato[i] = new SweetPotato();
             this.sweet_potato[i].interactive = true;
-            this.sweet_potato[i].on('pointerover', () => this.sweet_potato[i].scale.set(1.2))
-                    .on('pointerout', ()=> this.sweet_potato[i].scale.set(1))
+            this.sweet_potato[i].scale.set(canvasScale)
+            this.sweet_potato[i].on('pointerover', () => this.sweet_potato[i].scale.set(1.2 * canvasScale))
+                    .on('pointerout', ()=> this.sweet_potato[i].scale.set(canvasScale))
                     .on('pointerup', ()=> {this.snailAction(this.sweet_potato[i])})
-                    .on('pointerdown',()=> this.sweet_potato[i].scale.set(1))
-                    .on('pointerup',()=> this.sweet_potato[i].scale.set(1.2));
+                    .on('pointerdown',()=> this.sweet_potato[i].scale.set(canvasScale))
+                    .on('pointerup',()=> this.sweet_potato[i].scale.set(1.2 * canvasScale));
             this.addChild(this.sweet_potato[i])
         }
         this.btn_tutorial = new Btn_tutorial();
@@ -98,6 +103,7 @@ export class GameScreen extends Container {
         this.addChild(this.btn_back);
 
         this.snail = new Snail();
+        this.snail.scale.set(0.5 * canvasScale)
         this.addChild(this.snail);
 
         this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
@@ -142,7 +148,6 @@ export class GameScreen extends Container {
             this.sweet_potato[k].y = height * place_data[k+15].y;
         }
 
-        this.snail.scale.set(0.5)
         this.snail.x = width * 0.5;
         this.snail.y = height * 0.5;
 
@@ -254,7 +259,7 @@ export class GameScreen extends Container {
         this.shuffle_place();
         this.resize(width,height)
 
-        if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1} else {this.back_number.scale.x= 1}
+        if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1 * canvasScale} else {this.back_number.scale.x= 1 * canvasScale}
 
         for (let k = 0; k < 5; k++) {
             this.leaf[k].show(true);
@@ -281,12 +286,12 @@ export class GameScreen extends Container {
     public async snailAction(food: any){
         let speed = (this.Pitago((this.snail.position.x - food.position.x),(this.snail.position.y - food.position.y)) / 200) + 0.5
         if(food.position.x > this.snail.position.x){
-            this.snail.scale.x= -0.5
-            this.back_number.scale.x= -1
+            this.snail.scale.x= -0.5 * canvasScale
+            this.back_number.scale.x= -1 * canvasScale
             this.back_number.width = 250;
         } else {
-            this.snail.scale.x= 0.5
-            this.back_number.scale.x= 1
+            this.snail.scale.x= 0.5 * canvasScale
+            this.back_number.scale.x= 1 * canvasScale
             this.back_number.width = 250;
         }
         this.snail.play2();
@@ -302,7 +307,7 @@ export class GameScreen extends Container {
             this.back_number = new Label(level.toString(), { fill: 0xffffff, fontSize: 270 }, 200)
             this.snail.addContent(this.back_number)
             this.back_number.position.set(675,-520)
-            if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1}
+            if(this.snail.scale.x < 0) {this.back_number.width = 250;this.back_number.scale.x= -1 * canvasScale}
             if(level == 0){
                 await waitFor(1)
                 navigation.presentPopup(ResultPopup);prevPopup = 'finish'}

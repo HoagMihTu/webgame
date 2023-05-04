@@ -1,20 +1,10 @@
 import { Container, Sprite, Texture } from 'pixi.js';
 import { gsap } from 'gsap';
-
-const windowWidth = window.innerWidth * 0.85;
-const windowHeight = window.innerHeight * 0.85;
-const minWidth = 600;
-const minHeight = 325;
-
-const scaleX = windowWidth < minWidth ? minWidth / windowWidth : 1;
-const scaleY = windowHeight < minHeight ? minHeight / windowHeight : 1;
-const scale = scaleX > scaleY ? scaleX : scaleY;
-const canvasWidth = windowWidth * scale;
-const canvasHeight = windowHeight * scale;
+import { canvasScale, canvasHeight, canvasWidth } from '../Game3';
 
 const defaultLevelPieceOptions = {
     level_num: 0,
-    star_num: 0
+    star_num: 0,
 };
 
 type LevelPieceOptions = typeof defaultLevelPieceOptions;
@@ -37,19 +27,19 @@ export class Level_piece extends Container {
         this.sprite.height = canvasWidth/10
         this.sprite.anchor.set(0.5)
         this.sprite.interactive = true;
-        this.sprite.on('pointerover', () => {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33)})
-                     .on('pointerout', ()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3)})
-                     .on('pointerdown',()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3)})
-                     .on('pointerup',()=> {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33)})
+        this.sprite.on('pointerover', () => {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33 * canvasScale)})
+                     .on('pointerout', ()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3 * canvasScale)})
+                     .on('pointerdown',()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3 * canvasScale)})
+                     .on('pointerup',()=> {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33 * canvasScale)})
         this.addChild(this.sprite);
 
         this.level = new Sprite(Texture.from(`./game3/png/level_${opts.level_num}.png`))
-        this.level.scale.set(0.3)
+        this.level.scale.set(0.3 * canvasScale)
         this.level.interactive = true;
-        this.level.on('pointerover', () => {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33)})
-                     .on('pointerout', ()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3)})
-                     .on('pointerdown',()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3)})
-                     .on('pointerup',()=> {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33)})
+        this.level.on('pointerover', () => {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33 * canvasScale)})
+                     .on('pointerout', ()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3 * canvasScale)})
+                     .on('pointerdown',()=> {this.sprite.width = canvasWidth/10; this.sprite.height = canvasWidth/10;this.level.scale.set(0.3 * canvasScale)})
+                     .on('pointerup',()=> {this.sprite.width = canvasWidth/9; this.sprite.height = canvasWidth/9;this.level.scale.set(0.33 * canvasScale)})
         this.level.anchor.set(0.5)
         this.addChild(this.level);
 
@@ -63,20 +53,20 @@ export class Level_piece extends Container {
                 break;
             case 1:
                 this.star1 = new Sprite(Texture.from(`./common/star_2.png`))
-                this.star1.scale.set(0.3)
+                this.star1.scale.set(0.3 * canvasScale)
                 this.star1.anchor.set(0.5)
                 this.star1.y = canvasHeight / 13
                 this.addChild(this.star1);
                 break;
             case 2:
                 this.star1 = new Sprite(Texture.from(`./common/star_2.png`))
-                this.star1.scale.set(0.3)
+                this.star1.scale.set(0.3 * canvasScale)
                 this.star1.anchor.set(0.5)
                 this.star1.x = - canvasWidth/ 56
                 this.star1.y = canvasHeight / 13
                 this.addChild(this.star1);
                 this.star2 = new Sprite(Texture.from(`./common/star_2.png`))
-                this.star2.scale.set(0.3)
+                this.star2.scale.set(0.3 * canvasScale)
                 this.star2.anchor.set(0.5)
                 this.star2.x = canvasWidth/ 56
                 this.star2.y = canvasHeight / 13
@@ -84,18 +74,18 @@ export class Level_piece extends Container {
                 break;
             case 3:
                 this.star1 = new Sprite(Texture.from(`./common/star_2.png`))
-                this.star1.scale.set(0.3)
+                this.star1.scale.set(0.3 * canvasScale)
                 this.star1.anchor.set(0.5)
                 this.star1.x = - canvasWidth/ 28
                 this.star1.y = canvasHeight / 13
                 this.addChild(this.star1);
                 this.star2 = new Sprite(Texture.from(`./common/star_2.png`))
-                this.star2.scale.set(0.3)
+                this.star2.scale.set(0.3 * canvasScale)
                 this.star2.anchor.set(0.5)
                 this.star2.y = canvasHeight / 13
                 this.addChild(this.star2);
                 this.star3 = new Sprite(Texture.from(`./common/star_2.png`))
-                this.star3.scale.set(0.3)
+                this.star3.scale.set(0.3 * canvasScale)
                 this.star3.anchor.set(0.5)
                 this.star3.x = canvasWidth/ 28
                 this.star3.y = canvasHeight / 13
@@ -111,7 +101,7 @@ export class Level_piece extends Container {
             this.sprite.scale.set(0);
             await gsap.to(this.sprite.scale, { x: 1, y: 1, duration: 0.3, ease: 'back.out' });
         } else {
-            this.sprite.scale.set(1);
+            this.sprite.scale.set(1 * canvasScale);
         }
     }
 

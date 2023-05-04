@@ -8,18 +8,7 @@ import { Fridge } from '../ui/Fridge';
 import { Basket } from '../ui/Basket';
 import { Game_piece } from '../ui/Game_piece';
 import { waitFor } from '../utils/asyncUtils';
-import { app_game6 } from '../Game6';
-
-const windowWidth = window.innerWidth * 0.85;
-const windowHeight = window.innerHeight * 0.85;
-const minWidth = 600;
-const minHeight = 325;
-
-const scaleX = windowWidth < minWidth ? minWidth / windowWidth : 1;
-const scaleY = windowHeight < minHeight ? minHeight / windowHeight : 1;
-const scale = scaleX > scaleY ? scaleX : scaleY;
-const canvasWidth = windowWidth * scale;
-const canvasHeight = windowHeight * scale;
+import { canvasScale, canvasHeight, canvasWidth } from '../Game6';
 
 const fridge_area1 = {  start:  {x: 0.285, y:0.075},
                         end:    {x: 0.49, y:0.685}};
@@ -275,46 +264,46 @@ export class GameScreen extends Container {
 
     public setup(){
         this.game_piece[0] = new Game_piece({sprite: fruit_big[0].sprite, type: fruit_big[0].type, size: fruit_big[0].size, scale: fruit_big[0].scale, rotate: fruit_big[0].rotate});
-        this.game_piece[0].scale.set(this.game_piece[0].customScale)
+        this.game_piece[0].scale.set(this.game_piece[0].customScale * canvasScale)
         this.game_piece[0].rotation = this.game_piece[0].customRotate
         this.game_piece[0].interactive = true;
-        this.game_piece[0].on('pointerover', () => this.game_piece[0].scale.set(this.game_piece[0].customScale*1.2))
-                .on('pointerout', ()=> this.game_piece[0].scale.set(this.game_piece[0].customScale))
-                .on('pointerdown',()=> {this.game_piece[0].scale.set(this.game_piece[0].customScale); target = this.game_piece[0]; target_index = 0})
-                .on('pointerup',()=> this.game_piece[0].scale.set(this.game_piece[0].customScale*1.2));
+        this.game_piece[0].on('pointerover', () => this.game_piece[0].scale.set(this.game_piece[0].customScale * 1.2 * canvasScale))
+                .on('pointerout', ()=> this.game_piece[0].scale.set(this.game_piece[0].customScale * canvasScale))
+                .on('pointerdown',()=> {this.game_piece[0].scale.set(this.game_piece[0].customScale * canvasScale); target = this.game_piece[0]; target_index = 0})
+                .on('pointerup',()=> this.game_piece[0].scale.set(this.game_piece[0].customScale * 1.2 * canvasScale));
         this.addChild(this.game_piece[0])
 
         this.game_piece[1] = new Game_piece({sprite: vege_big[0].sprite, type: vege_big[0].type, size: vege_big[0].size, scale: vege_big[0].scale, rotate: vege_big[0].rotate});
-        this.game_piece[1].scale.set(this.game_piece[1].customScale)
+        this.game_piece[1].scale.set(this.game_piece[1].customScale * canvasScale)
         this.game_piece[1].rotation = this.game_piece[1].customRotate
         this.game_piece[1].interactive = true;
-        this.game_piece[1].on('pointerover', () => this.game_piece[1].scale.set(this.game_piece[1].customScale*1.2))
-                .on('pointerout', ()=> this.game_piece[1].scale.set(this.game_piece[1].customScale))
-                .on('pointerdown',()=> {this.game_piece[1].scale.set(this.game_piece[1].customScale); target = this.game_piece[1]; target_index = 1})
-                .on('pointerup',()=> this.game_piece[1].scale.set(this.game_piece[1].customScale*1.2));
+        this.game_piece[1].on('pointerover', () => this.game_piece[1].scale.set(this.game_piece[1].customScale * 1.2 * canvasScale))
+                .on('pointerout', ()=> this.game_piece[1].scale.set(this.game_piece[1].customScale * canvasScale))
+                .on('pointerdown',()=> {this.game_piece[1].scale.set(this.game_piece[1].customScale * canvasScale); target = this.game_piece[1]; target_index = 1})
+                .on('pointerup',()=> this.game_piece[1].scale.set(this.game_piece[1].customScale * 1.2 * canvasScale));
         this.addChild(this.game_piece[1])
 
         for(let i = 2; i < 6; i++){
             this.game_piece[i] = new Game_piece({sprite: fruit_small[i].sprite, type: fruit_small[i].type, size: fruit_small[i].size, scale: fruit_small[i].scale, rotate: fruit_small[i].rotate});
-            this.game_piece[i].scale.set(this.game_piece[i].customScale)
+            this.game_piece[i].scale.set(this.game_piece[i].customScale * canvasScale)
             this.game_piece[i].rotation = this.game_piece[i].customRotate
             this.game_piece[i].interactive = true;
-            this.game_piece[i].on('pointerover', () => this.game_piece[i].scale.set(this.game_piece[i].customScale*1.2))
-                    .on('pointerout', ()=> this.game_piece[i].scale.set(this.game_piece[i].customScale))
-                    .on('pointerdown',()=> {this.game_piece[i].scale.set(this.game_piece[i].customScale); target = this.game_piece[i]; target_index = i})
-                    .on('pointerup',()=> this.game_piece[i].scale.set(this.game_piece[i].customScale*1.2));
+            this.game_piece[i].on('pointerover', () => this.game_piece[i].scale.set(this.game_piece[i].customScale * 1.2 * canvasScale))
+                    .on('pointerout', ()=> this.game_piece[i].scale.set(this.game_piece[i].customScale * canvasScale))
+                    .on('pointerdown',()=> {this.game_piece[i].scale.set(this.game_piece[i].customScale * canvasScale); target = this.game_piece[i]; target_index = i})
+                    .on('pointerup',()=> this.game_piece[i].scale.set(this.game_piece[i].customScale * 1.2 * canvasScale));
             this.addChild(this.game_piece[i])
         }
 
         for(let i = 6; i < 10; i++){
             this.game_piece[i] = new Game_piece({sprite: vege_small[i].sprite, type: vege_small[i].type, size: vege_small[i].size, scale: vege_small[i].scale, rotate: vege_small[i].rotate});
-            this.game_piece[i].scale.set(this.game_piece[i].customScale)
+            this.game_piece[i].scale.set(this.game_piece[i].customScale * canvasScale)
             this.game_piece[i].rotation = this.game_piece[i].customRotate
             this.game_piece[i].interactive = true;
-            this.game_piece[i].on('pointerover', () => this.game_piece[i].scale.set(this.game_piece[i].customScale*1.2))
-                    .on('pointerout', ()=> this.game_piece[i].scale.set(this.game_piece[i].customScale))
-                    .on('pointerdown',()=> {this.game_piece[i].scale.set(this.game_piece[i].customScale); target = this.game_piece[i]; target_index = i})
-                    .on('pointerup',()=> this.game_piece[i].scale.set(this.game_piece[i].customScale*1.2));
+            this.game_piece[i].on('pointerover', () => this.game_piece[i].scale.set(this.game_piece[i].customScale * 1.2 * canvasScale))
+                    .on('pointerout', ()=> this.game_piece[i].scale.set(this.game_piece[i].customScale * canvasScale))
+                    .on('pointerdown',()=> {this.game_piece[i].scale.set(this.game_piece[i].customScale * canvasScale); target = this.game_piece[i]; target_index = i})
+                    .on('pointerup',()=> this.game_piece[i].scale.set(this.game_piece[i].customScale * 1.2 * canvasScale));
             this.addChild(this.game_piece[i])
         }
         this.basket1 = new Basket();

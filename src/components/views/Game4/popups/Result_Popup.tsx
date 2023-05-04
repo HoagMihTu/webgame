@@ -8,6 +8,7 @@ import { Label } from '../ui/Label';
 import gsap from 'gsap';
 import { navigation } from '../utils/navigation';
 import { GameScreen } from '../screens/GameScreen';
+import { canvasScale } from '../Game4';
 
 export class ResultPopup extends Container {
     private bg: Sprite;
@@ -59,6 +60,8 @@ export class ResultPopup extends Container {
                         .on('pointerdown',()=> this.btn_resume.scale.set(1))
                         .on('pointerup',()=> this.btn_resume.scale.set(1.2));
         this.panel.addChild(this.btn_resume);
+
+        this.panel.scale.set(canvasScale)
     }
 
     public prepare() {

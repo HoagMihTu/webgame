@@ -1,5 +1,6 @@
 import { Container, Sprite, Texture } from 'pixi.js';
 import { gsap } from 'gsap';
+import { canvasScale } from '../Game8';
 
 const defaultGamePieceOptions = {
     sprite: '',

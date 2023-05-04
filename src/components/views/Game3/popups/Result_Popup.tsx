@@ -7,7 +7,8 @@ import { Banner } from '../ui/Banner';
 import { Label } from '../ui/Label';
 import gsap from 'gsap';
 import { navigation } from '../utils/navigation';
-import { GameScreen } from '../screens/GameScreen';
+import { canvasScale } from '../Game3';
+
 
 export class ResultPopup extends Container {
     private bg: Sprite;
@@ -33,7 +34,7 @@ export class ResultPopup extends Container {
         this.hightlight = new HightLight();
         this.panel.addChild(this.hightlight);
 
-        this.panelBase = new RoundedBox({ height: 360, width: 540 });
+        this.panelBase = new RoundedBox({ height: 360, width: 540  });
         this.panel.addChild(this.panelBase);
 
         this.banner = new Banner();
@@ -57,6 +58,7 @@ export class ResultPopup extends Container {
                         .on('pointerdown',()=> this.btn_resume.scale.set(1))
                         .on('pointerup',()=> this.btn_resume.scale.set(1.2));
         this.panel.addChild(this.btn_resume);
+        this.panel.scale.set(canvasScale)
     }
 
     public prepare() {
@@ -67,7 +69,7 @@ export class ResultPopup extends Container {
         this.bg.width = width;
         this.bg.height = height;
         this.panel.x = width * 0.5;
-        this.panel.y = height * 0.5;
+        this.panel.y = height * 0.5
     }
 
     public async show() {

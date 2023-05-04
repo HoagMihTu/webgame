@@ -11,19 +11,10 @@ import { Pet } from '../ui/Pet';
 import { Pick_color } from '../ui/Pick_color';
 import { waitFor } from '../utils/asyncUtils';
 import { app_game7 } from '../Game7';
+import { canvasScale, canvasHeight, canvasWidth } from '../Game7';
 
 let prevPopup: any;
 
-const windowWidth = window.innerWidth * 0.85;
-const windowHeight = window.innerHeight * 0.85;
-const minWidth = 600;
-const minHeight = 325;
-
-const scaleX = windowWidth < minWidth ? minWidth / windowWidth : 1;
-const scaleY = windowHeight < minHeight ? minHeight / windowHeight : 1;
-const scale = scaleX > scaleY ? scaleX : scaleY;
-const canvasWidth = windowWidth * scale;
-const canvasHeight = windowHeight * scale;
 
 let colorToPick = [ {sprite: '/game7/red.png', color: '0xf03e3e', x: 0.15, y: 0.9},
                     {sprite: '/game7/pink.png', color: '0xf57ba0', x: 0.24, y: 0.9},
@@ -85,18 +76,21 @@ export class GameScreen extends Container {
 
         this.pet = new Pet();
         this.pet.interactive = true;
+        this.pet.scale.set(canvasScale)
         this.pet.on('pointerover', () => this.pet.onFalse())
                 .on('pointerdown',()=> this.pet.onTrue());
         this.addChild(this.pet)
 
         this.food = new Food();
         this.food.interactive = true;
+        this.food.scale.set(canvasScale)
         this.food.on('pointerover', () => this.food.onFalse())
                 .on('pointerdown',()=> this.food.onTrue());
         this.addChild(this.food)
 
         for (let i = 0; i<10;i++){
             this.pick_color[i] = new Pick_color({sprite: colorToPick[i].sprite, color: colorToPick[i].color});
+            this.pick_color[i].scale.set(canvasScale)
             this.pick_color[i].interactive = true;
             this.pick_color[i].on('pointerup', ()=> {this.pick_color[i].onPick(); this.setColor(i)})
             this.addChild(this.pick_color[i])
@@ -196,10 +190,10 @@ export class GameScreen extends Container {
     public setColor(i: number){
         for (let k = 0; k<10;k++){
             if (k == i){
-                this.pick_color[k].scale.set(1.2)
+                this.pick_color[k].scale.set(1.2 * canvasScale)
                 pickedColor = colorToPick[k].color
             } else {
-                this.pick_color[k].scale.set(1)
+                this.pick_color[k].scale.set(1 * canvasScale)
             }
         }
     }

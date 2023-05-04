@@ -22,6 +22,17 @@ function Game8() {
   
 export default Game8
 
+const windowWidth = window.innerWidth * 0.85;
+const windowHeight = window.innerHeight * 0.85;
+const minWidth = 600;
+const minHeight = 325;
+
+const scaleX = windowWidth < minWidth ? minWidth / windowWidth : 1;
+const scaleY = windowHeight < minHeight ? minHeight / windowHeight : 1;
+const scale = scaleX > scaleY ? scaleX : scaleY;
+export const canvasWidth = windowWidth * scale
+export const canvasHeight = windowHeight * scale;
+export const canvasScale = canvasHeight/540
 
 export const app_game8 = new Application<HTMLCanvasElement>({
     resolution: Math.max(window.devicePixelRatio, 2),

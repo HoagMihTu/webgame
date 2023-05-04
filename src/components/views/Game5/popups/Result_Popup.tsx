@@ -8,6 +8,7 @@ import { Label } from '../ui/Label';
 import gsap from 'gsap';
 import { navigation } from '../utils/navigation';
 import { GameScreen } from '../screens/GameScreen';
+import { canvasScale } from '../Game5';
 
 export class ResultPopup extends Container {
     private bg: Sprite;
@@ -53,12 +54,14 @@ export class ResultPopup extends Container {
         this.btn_resume = new Btn_resume({ text: 'Resume' });
         this.btn_resume.y = 190;
         this.btn_resume.interactive = true
-        this.btn_resume.on('pointerup',() => {this.btn_resume.scale.set(1);navigation.dismissPopup()})
+        this.btn_resume.on('pointerup',() => {this.btn_resume.scale.set(1);navigation.dismissPopup();gamescreen.reset()})
                         .on('pointerover', () => this.btn_resume.scale.set(1.2))
                         .on('pointerout', ()=> this.btn_resume.scale.set(1))
                         .on('pointerdown',()=> this.btn_resume.scale.set(1))
                         .on('pointerup',()=> this.btn_resume.scale.set(1.2));
         this.panel.addChild(this.btn_resume);
+
+        this.panel.scale.set(canvasScale)
     }
 
     public prepare() {

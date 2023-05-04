@@ -13,17 +13,7 @@ import { Shark } from '../ui/Shark';
 import { waitFor } from '../utils/asyncUtils';
 
 import { gsap } from 'gsap';
-
-const windowWidth = window.innerWidth * 0.85;
-const windowHeight = window.innerHeight * 0.85;
-const minWidth = 600;
-const minHeight = 325;
-
-const scaleX = windowWidth < minWidth ? minWidth / windowWidth : 1;
-const scaleY = windowHeight < minHeight ? minHeight / windowHeight : 1;
-const scale = scaleX > scaleY ? scaleX : scaleY;
-const canvasWidth = windowWidth * scale;
-const canvasHeight = windowHeight * scale;
+import { canvasScale, canvasWidth, canvasHeight } from '../Game3';
 
 const level_dif = [{min: 0, max: 0},{min: 1, max: 6},{min: 3, max: 8},{min: 5, max: 10},{min: 7, max: 12},{min: 9, max: 14},]
 const answer_dif = [[0,1,2],[0,-1,1],[0,-2,-1]]
@@ -32,6 +22,8 @@ const place_data = [{x: 0.225, y: 1}, {x: 0.5, y: 1}, {x: 0.775, y: 1},]
 let true_answer = 1
 
 let timer = 0
+
+let timer_update = 1
 
 let level = 0;
 
@@ -82,12 +74,13 @@ export class GameScreen extends Container {
         }
         for(let i = 0; i<3; i++){
             this.clam[i] = new Clam();
+            this.clam[i].scale.set(canvasScale)
             this.clam[i].type = answer_dif[0][i]
             this.clam[i].interactive = true
             this.clam[i].on('pointerup',()=> {this.openAndClose(i)});
             this.addChild(this.clam[i]);
             this.answer[i] = new Sprite(Texture.from(`/game3/png/number_${answers[i]}.png`),);
-            this.answer[i].scale.set(0.5)
+            this.answer[i].scale.set(0.5 * canvasScale)
             this.answer[i].anchor.x = 0.5
             this.answer[i].anchor.y = 1
             this.answer[i].interactive = true
@@ -120,7 +113,7 @@ export class GameScreen extends Container {
             this.clam[i].x = width * place_data[i].x
             this.clam[i].y = height * place_data[i].y
             this.answer[i].x = width * place_data[i].x - width * 0.011
-            this.answer[i].y = height * place_data[i].y - 120
+            this.answer[i].y = height * place_data[i].y - 120 * canvasScale
         }
 
         for(let i = 0; i<true_answer; i++){
@@ -155,8 +148,10 @@ export class GameScreen extends Container {
     }
 
     public update() {
-        timer++
+        timer = timer + timer_update 
         if (timer > (420 + true_answer * 20)){
+            timer = 0
+            timer_update = 0
             this.reset()
         }
         if (true_answer>0){
@@ -198,15 +193,19 @@ export class GameScreen extends Container {
             }
 
             for(let i = 0; i<3; i++){
+                this.clam[i].interactive = true
                 this.clam[i].play1()
             }
 
             timer = 0
+            timer_update = 1
 
             for(let i = 0; i<true_answer; i++){
                 await this.fish[i].show(true)
             }
         } else {
+            timer = 0
+            timer_update = 0
             localStorage.setItem("point", `${point}`);
             navigation.presentPopup(ResultPopup);prevPopup = 'finish'
         }
@@ -216,9 +215,10 @@ export class GameScreen extends Container {
         timer = 0
         let last_fish = 0
         let destinationX = canvasWidth * place_data[index].x - canvasWidth * 0.011
-        let destinationY = canvasHeight * place_data[index].y - 120
+        let destinationY = canvasHeight * place_data[index].y - 120 * canvasScale
         for(let i = 0; i<3; i++){
             this.removeChild(this.answer[i])
+            this.clam[i].interactive = false
         }
         await this.clam[index].play3();
         await waitFor(0.5)

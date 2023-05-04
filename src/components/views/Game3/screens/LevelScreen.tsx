@@ -5,7 +5,6 @@ import { LoadScreen } from './LoadScreen';
 import { GameScreen } from './GameScreen';
 import { Level_piece } from '../ui/Level_piece';
 
-
 const place_data = [{x: 0.1, y: 0.5},{x: 0.3, y: 0.5},{x: 0.5, y: 0.5},{x: 0.7, y: 0.5},{x: 0.9, y: 0.5},]
 
 export class LevelScreen extends Container {

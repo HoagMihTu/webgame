@@ -1,4 +1,4 @@
-import { Container, Graphics, Sprite} from 'pixi.js';
+import { Container} from 'pixi.js';
 import { PausePopup } from '../popups/Pause_Popup';
 import { ResultPopup } from '../popups/Result_Popup';
 import { navigation } from '../utils/navigation';
@@ -7,20 +7,9 @@ import { Btn_tutorial } from '../ui/Btn_tutorial';
 import { Game_piece } from '../ui/Game_piece';
 import { Window } from '../ui/Window';
 import { waitFor } from '../utils/asyncUtils';
-import { app_game8 } from '../Game8';
+import { canvasScale, canvasHeight, canvasWidth } from '../Game8';
 
 let prevPopup: any;
-
-const windowWidth = window.innerWidth * 0.85;
-const windowHeight = window.innerHeight * 0.85;
-const minWidth = 600;
-const minHeight = 325;
-
-const scaleX = windowWidth < minWidth ? minWidth / windowWidth : 1;
-const scaleY = windowHeight < minHeight ? minHeight / windowHeight : 1;
-const scale = scaleX > scaleY ? scaleX : scaleY;
-const canvasWidth = windowWidth * scale;
-const canvasHeight = windowHeight * scale;
 
 let layer_data = [ {sprite: '/game8/bg_layer1.png', type: 0},
                     {sprite: '/game8/bg_layer2.png', type: 0},
@@ -38,7 +27,7 @@ let item_data = [ {sprite: '/game8/bookcase.png', type: 0, scale: 0.08, x: 0.15,
                     {sprite: '/game8/picture_rec_ver.png', type: 0, scale: 0.09, x: 0.17, y: 0.3},
                     {sprite: '/game8/picture_square.png', type: 1, scale: 0.09, x: 0.07, y: 0.3},
                     {sprite: '/game8/vase.png', type: 0, scale: 0.07, x: 0.525, y: 0.7},
-                    {sprite: '/game8/wardrobe.png', type: 1, scale: 0.08, x: 0.85, y: 0.7},]
+                    {sprite: '/game8/wardrobe.png', type: 1, scale: 0.1, x: 0.85, y: 0.7},]
 let check = 0;
 
 export class GameScreen extends Container {
@@ -171,7 +160,7 @@ export class GameScreen extends Container {
             }
             for(let i = 0; i<7; i++){
                 this.game_piece[i].show(true)
-                this.game_piece[i].scale.set(item_data[i].scale)
+                this.game_piece[i].scale.set(item_data[i].scale * canvasScale /1.5)
             }
         }
     }

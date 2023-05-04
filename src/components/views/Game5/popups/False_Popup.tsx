@@ -3,6 +3,7 @@ import { Label } from '../ui/Label';
 import gsap from 'gsap';
 import { navigation } from '../utils/navigation';
 import { waitFor } from '../utils/asyncUtils';
+import { canvasScale } from '../Game5';
 
 export class FalsePopup extends Container {
     private bg: Sprite;
@@ -27,12 +28,12 @@ export class FalsePopup extends Container {
         this.panel.addChild(this.title);
 
         this.crySnailContainer = new Sprite(Texture.from('/game5/png/container.png'))
-        this.crySnailContainer.scale.set(0.5)
+        this.crySnailContainer.scale.set(0.5 * canvasScale)
         this.crySnailContainer.anchor.set(0.5)
         this.panel.addChild(this.crySnailContainer);
 
         this.crySnail = new Sprite(Texture.from('/game5/png/end_snail.png'))
-        this.crySnail.scale.set(1)
+        this.crySnail.scale.set(canvasScale)
         this.crySnail.anchor.set(0.5)
         this.crySnailContainer.addChild(this.crySnail);
 
