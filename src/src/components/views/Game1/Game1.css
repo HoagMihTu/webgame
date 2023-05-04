@@ -1,0 +1,276 @@
+.gameplay-container {
+  align-self: self-end;
+  min-width: 700px;
+  min-height: 500px;
+  position: relative;
+}
+
+.img-game-background {
+  width: 100%;
+}
+
+.img-tutorial-background {
+  width: 100%;
+  min-height: 500px;
+  background-color: rgb(255, 109, 153);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  border-radius: 50px;
+}
+
+.img-tutorial {
+  height: 100%;
+  width: 100%
+}
+
+.img-container {
+  display: inline-block;
+  position: relative;
+}
+
+.img-tutorial-container {
+  display: inline-block;
+  max-width: 300px;
+}
+
+.tutorial-description {
+  width: 350px;
+  height: 220px;
+  color: #ffcc33;
+  font-size: 60px;
+  word-wrap: break-word;
+  margin: 20px;
+  margin-top: -10px;
+}
+
+.img-lightbulb {
+  transform: rotateZ(20deg)
+}
+
+.gameplay-description {
+  color: #000;
+  font-size: 30px;
+  word-wrap: break-word;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.show-img-container {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 147px;
+}
+
+.show-img1 {
+  width: fit-content;
+  display: grid;
+  gap: 8px;
+}
+
+.show-img2 {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, auto);
+}
+
+.show-img3 {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, auto);
+}
+
+.show-img4 {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, auto);
+}
+
+.show-img5 {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(5, auto);
+}
+
+.img-item {
+  max-width: 100%;
+}
+
+.img-screen {
+  width:700px;
+  height:500px;
+}
+
+.hr {
+  border-bottom: 2px dashed rgb(210, 210, 210);
+  transform: rotate(-0.28deg);
+  border-top: 0px none;
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+.button-answer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.button-answer-group {
+  display: inline-block;
+}
+
+.button-answer {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(5, auto);
+}
+
+.button-choose {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #3399ff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: #999 0px 9px 0px 0px;
+}
+
+.button-choose:hover {background-color: #0099cc}
+
+.button-choose:active {
+  background-color: #ffc107;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button-true {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #30d585;
+  border: none;
+  border-radius: 50px;
+  box-shadow: #999 0px 9px 0px 0px;
+}
+
+.button-true:hover {background-color: #20c274}
+
+.button-true:active {
+  background-color: #20c274;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button-group {
+  top:80%;
+  left: 38%;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.button-group2 {
+  top:80%;
+  left: 37%;
+  margin: 0 auto;
+  position: absolute;
+  margin-top: 10px;
+}
+
+.button-group3 {
+  top: 70%;
+  left: -1%;
+  margin: 0 auto;
+  position: absolute;
+  margin-top: 10px;
+}
+
+.wrong-description-container {
+  height: 500px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-content: center;
+  border-radius: 50px;
+}
+
+.wrong-description {
+  width: 100%;
+  min-height: 500px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-content: center;
+  border-radius: 50px;
+}
+
+.wrong-img-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.wrong-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.wrong-title {
+  font-size: 20px;
+  word-wrap: break-word;
+  margin: 20px;
+}
+
+.wrong-makeup-container {
+  text-align: center;
+}
+
+.wrong-makeup {
+  margin-top: 2rem;
+  width: 100%;
+  height: 85%;
+  border-style: dashed;
+  border-width: 10px;
+  border-color: gray;
+}
+
+.wrong-makeup-screen {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.button-send-answer {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #30d585;
+  border: none;
+  border-radius: 50px;
+  box-shadow: #999 0px 9px 0px 0px;
+}
+
+.button-send-answer:hover {background-color: #20c274}
+
+.button-send-answer:active {
+  background-color: #20c274;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
