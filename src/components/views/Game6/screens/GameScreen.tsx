@@ -113,8 +113,8 @@ export class GameScreen extends Container {
     private btn_back: Btn_back;
     private btn_tutorial: Btn_tutorial;
     private fridge: Fridge;
-    private basket1: Basket;
-    private basket2: Basket;
+    private basket1?: Basket;
+    private basket2?: Basket;
     private game_piece: Game_piece[] = [];
 
     constructor() {
@@ -168,12 +168,18 @@ export class GameScreen extends Container {
 
         this.fridge.x = width * 0.5;
         this.fridge.y = height * 0.5;
+        this.fridge.width = width * 0.5;
+        this.fridge.height = height * 0.75;
 
-        this.basket1.x = width * 0.15;
-        this.basket1.y = height * 0.85;
+        this.basket1!.x = width * 0.15;
+        this.basket1!.y = height * 0.85;
+        this.basket1!.width = width * (1/6);
+        this.basket1!.height = height * (1/6);
 
-        this.basket2.x = width * 0.85;
-        this.basket2.y = height * 0.85;
+        this.basket2!.x = width * 0.85;
+        this.basket2!.y = height * 0.85;
+        this.basket2!.width = width * (1/6);
+        this.basket2!.height = height * (1/6);
 
         this.game_piece[0].x = width * big_place_data[0].x;
         this.game_piece[0].y = height * big_place_data[0].y;
@@ -192,11 +198,11 @@ export class GameScreen extends Container {
             this.game_piece[k].hide(false);
         }
         this.fridge.hide(false)
-        await this.basket1.hide(false)
-        await this.basket2.hide(false)
+        await this.basket1!.hide(false)
+        await this.basket2!.hide(false)
 
-        this.basket1.show(true)
-        this.basket2.show(true)
+        this.basket1!.show(true)
+        this.basket2!.show(true)
 
         await waitFor(0.5)
 

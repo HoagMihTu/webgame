@@ -33,8 +33,6 @@ let true_answer = 1
 
 let timer = 0
 
-let timer_update = 1
-
 let level = 0;
 
 let round = 3
@@ -157,7 +155,7 @@ export class GameScreen extends Container {
     }
 
     public update() {
-        timer = timer + timer_update
+        timer++
         if (timer > (420 + true_answer * 20)){
             this.reset()
         }
@@ -204,21 +202,18 @@ export class GameScreen extends Container {
             }
 
             timer = 0
-            timer_update = 1
 
             for(let i = 0; i<true_answer; i++){
                 await this.fish[i].show(true)
             }
         } else {
-            timer = 0
-            timer_update = 0
             localStorage.setItem("point", `${point}`);
             navigation.presentPopup(ResultPopup);prevPopup = 'finish'
         }
     }
 
     public async openAndClose(index: any) {
-        timer_update = 0
+        timer = 0
         let last_fish = 0
         let destinationX = canvasWidth * place_data[index].x - canvasWidth * 0.011
         let destinationY = canvasHeight * place_data[index].y - 120
