@@ -1,18 +1,26 @@
 import { Container, Texture, Sprite } from 'pixi.js';
 import { gsap } from 'gsap';
 
-export class SweetPotato extends Container {
+const defaultFoodOptions = {
+    sprite: '',
+    type: '',
+    scale: 0.01
+};
+
+type FoodOptions = typeof defaultFoodOptions;
+
+export class Food_Type_4 extends Container {
     private sprite: Sprite;
     public type: String;
 
-    constructor() {
+    constructor(options: Partial<FoodOptions> = {}) {
+        const opts = { ...defaultFoodOptions, ...options };
         super();
         this.sprite = new Sprite(
-            Texture.from('/game5/png/sweet_potato.png'),
+            Texture.from(`https://api.stg.qlmn.vn/${opts.sprite}`),
         );
-        this.sprite.scale.set(0.5)
         this.sprite.anchor.set(0.5)
-        this.type = 'củ khoai lang'
+        this.type = opts.type
         this.addChild(this.sprite);
     }
 

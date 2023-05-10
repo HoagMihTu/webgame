@@ -55,7 +55,7 @@ export class GameScreen extends Container {
 
         this.btn_back = new Btn_back();
         this.btn_back.interactive = true
-        this.btn_back.on('pointerup', ()=> navigation.showScreen(LevelScreen))
+        this.btn_back.on('pointerup', ()=> {round = 3; navigation.showScreen(LevelScreen)})
         this.addChild(this.btn_back);
 
         this.setup()
